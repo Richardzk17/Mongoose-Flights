@@ -2,9 +2,9 @@ import { Router } from 'express'
 
 const router = Router()
 
-// GET localhost:3000/users
+// GET localhost:3000/
 router.get('/', function(req, res) {
-  res.send('respond with a resource')
+  res.render('index', { title: 'Mongoose Movies' })
 })
 
 export { router }
