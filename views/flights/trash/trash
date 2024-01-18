@@ -1,0 +1,51 @@
+  </a>
+    </div>
+    <div>R: </div>
+    <div><%= flight.releaseYear %></div>
+    <div>Rating: </div>
+    <div><%= flight.mpaaRating %></div>
+    <div>Cast: </div>
+    <div><%= flight.cast.join(', ') %></div>
+    <div>Now Showing: </div>
+    <div><%= flight.nowShowing ? 'Yes' : 'Nope' %></div>
+  </section>
+<% // new markup below %>
+<h2>Reviews</h2>
+<% if (flight.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% flight.reviews.forEach(function(review) { %>
+        <tr>
+          <td><%= review.createdAt.toLocaleDateString() %></td>
+          <td><%= review.content %></td>
+          <td><%= review.rating %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h3>No Reviews Yet</h3>
+<% } %>
+<form 
+  id="add-review-form"
+  action="/flights/<%= flight._id %>/reviews"
+  method="POST"
+>
+  <label for="content-textarea">Review:</label>
+  <textarea name="content" id="content-textarea"></textarea>
+  <label for="rating-select">Rating:</label>
+  <select name="rating" id="rating-select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <button type="submit">Add Review</button>

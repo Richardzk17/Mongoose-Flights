@@ -1,1 +1,54 @@
-edit
+<!-- <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/flights/edit.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="" method="POST">
+    <label for="title-input">Title:</label>
+    <input type="text" value="<%= flight.title %>" name="title" id="title-input">
+    <label for="release-year-input">Release Year:</label>
+    <input type="text" value="<%= flight.releaseYear %>" name="releaseYear" id="release-year-input">
+    <label for="mpaa-rating-select">MPAA Rating:</label>
+    <select name="mpaaRating" id="mpaa-rating-select">
+      <option value="<%= flight.mpaaRating %>"><%= flight.mpaaRating %></option>
+      <option value="G">G</option>
+      <option value="PG">PG</option>
+      <option value="PG-13">PG-13</option>
+      <option value="R">R</option>
+    </select>
+    <label for="cast-input">Cast (separate actors with commas):</label>
+    <input type="text" value="<%= flight.cast.join(', ') %>" name="cast" id="cast-input">
+    <label for="now-showing-checkbox">Now Showing:</label>
+    <input type="checkbox" <%= movie.nowShowing ? 'checked' : '' %> name="nowShowing" id="now-showing-checkbox">
+    <button type="submit">Save Movie</button>
+  </form>
+</main>
+
+<main>
+    <h1><%= title %></h1>
+    <form id="new-form" action="" method="POST">
+        <select name="airline" id="airline-select">
+            <option value="<%= flight.airline %>"><%= flight.airline %></option>
+            <option value="American">American</option>
+            <option value="Southwestern">Southwestern</option>
+            <option value="United">United</option>
+            <option value="N/A" selected>N/A</option>
+          </select>
+          <select name="airport" id="airport-select">
+            <option value="<%= flight.airport%>"><%= flight.airport %></option>
+            <option value="AUS">AUS</option>
+            <option value="DFW">DFW</option>
+            <option value="DEN">DEN</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+            <option value="DEN" selected>DEN</option>
+          </select>
+          
+    </form>
+
+</main>
+
+<%- include('../partials/footer') %> -->
+
+hello
