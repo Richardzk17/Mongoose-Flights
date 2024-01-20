@@ -1,19 +1,48 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/flights/show.css" />
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/flights/show.css" />
+  <%- include('../partials/nav') %>
 
-<main>
-  <h1><%= title %></h1>
-  <section>
-    <div>Title: </div>
-    <div>
+    <main>
+      <h1>
+        <%= title %>
+      </h1>
+      <section>
+        <form action="">
+        <div>
+            <table id="list">
+              <thead>
+                <tr>
+                  <th>Airline</th>
+                  <th>Airport</th>
+                  <th>Date</th>
+                  <th>flight number</th>
+
+                </tr>
+              </thead>
+              </tr>
+              <td>
+                <%= flight.airline %>
+              </td>
+              <td>
+                <%= flight.airport %>
+              </td>
+              <td>
+              <%= flight.departs %>
+                </td>
+                <td>
+                <%= flight.flightNo %>
+                  </td>
+                  </tr>
+                  <label for="seats">seat:</label>
+                  <input name="seat" required pattern="[A-F][1-9]\d?">
+                  <label for="price">price:</label>
+                  <input name="price" required pattern="0">
+      </section>
+      </form>
       <a href="/flights/<%= flight._id %>/edit">
         <button>Edit flight</button>
-    
-</form>
+      </a>
+    </main>
 
-</main>
-  
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
 
-<!-- Details -->
