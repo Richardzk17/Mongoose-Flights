@@ -23,7 +23,12 @@ const flightSchema = new Schema({
     },
     departs: {
         type: Date,
-        default: Date.now
+        default: function() {
+            const currentDate = new Date();
+            const oneYearLater = new Date(currentDate);
+            oneYearLater.setFullYear(currentDate.getFullYear() + 1);
+            return oneYearLater;
+        },
     },
     tickets: [ticketSchema],
     food: [{type: Schema.Types.ObjectId, ref: 'Meal'}]
